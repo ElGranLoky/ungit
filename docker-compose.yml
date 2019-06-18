@@ -1,0 +1,15 @@
+version: '3'
+services:
+  ungit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8448:8448'
+    volumes:
+      - 'E:\Proyectos EMT\Rancher:/git'
+    environment:
+      - GIT_EMAIL=diegofdezcarvajal@emtmadrid.es
+      - GIT_NAME=dfcarvajal
+      - AUTH=true
+      - 'USERS={admin:admin}'
