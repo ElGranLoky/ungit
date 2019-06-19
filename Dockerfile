@@ -17,13 +17,14 @@ RUN \
     && echo "ALL DONE"
 
 COPY .ungitrc /root/.ungitrc
+COPY entry.sh /entry.sh
+RUN chmod +x /entry.sh
 
 WORKDIR /git
 VOLUME ["/git"]
 
 EXPOSE 8448
 
-COPY entry.sh /entry.sh
 ENTRYPOINT ["/entry.sh"]
 
 CMD ["/usr/local/bin/ungit"]
